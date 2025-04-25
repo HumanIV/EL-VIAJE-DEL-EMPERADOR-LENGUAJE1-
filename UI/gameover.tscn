@@ -1,0 +1,216 @@
+[gd_scene load_steps=19 format=3 uid="uid://ctncbu867nw6s"]
+
+[ext_resource type="FontFile" uid="uid://brarhhleurljs" path="res://assets/fonts/zpix.ttf" id="1_idf8g"]
+[ext_resource type="AudioStream" uid="uid://ctnpobatwatj6" path="res://music_sounds/Melancholic Walk.mp3" id="2_0xa8q"]
+[ext_resource type="Script" uid="uid://dvrgb06c275bg" path="res://UI/continuar_si.gd" id="2_t5wfw"]
+[ext_resource type="Script" uid="uid://cp3f1mcyxphmu" path="res://UI/continuar_no.gd" id="3_t5wfw"]
+[ext_resource type="Texture2D" uid="uid://b2tqygbe287vj" path="res://UI/sombra.png" id="5_0vc6r"]
+[ext_resource type="Texture2D" uid="uid://bd1hq28t4ek6y" path="res://assets y escena player/FW/Fire_Warrior/Fire_WarriorDeath.png" id="5_b7a0e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5wfw"]
+font = ExtResource("1_idf8g")
+font_size = 42
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vc6r"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(144, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uofla"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(288, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owe1q"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(432, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ee38"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(576, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keuyv"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(720, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2egw"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(864, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84ggq"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(1008, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogk7s"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(1152, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vct2i"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(1296, 0, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t86vb"]
+atlas = ExtResource("5_b7a0e")
+region = Rect2(1440, 0, 144, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4ivs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vc6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uofla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owe1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ee38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keuyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2egw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84ggq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogk7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vct2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t86vb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="game over" type="RichTextLabel" parent="CenterContainer"]
+custom_minimum_size = Vector2(720, 453)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.643137, 0.109804, 1)
+theme_override_fonts/normal_font = ExtResource("1_idf8g")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center][wave]Game Over[/wave][/center]"
+
+[node name="游戏结束" type="RichTextLabel" parent="CenterContainer"]
+custom_minimum_size = Vector2(720, 172)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.643137, 0.109804, 1)
+theme_override_fonts/normal_font = ExtResource("1_idf8g")
+theme_override_font_sizes/normal_font_size = 110
+bbcode_enabled = true
+text = "[center][wave]游戏结束[/wave][/center]"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0xa8q")
+volume_db = 6.178
+autoplay = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.611
+anchor_right = 0.5
+anchor_bottom = 0.611
+offset_left = -126.0
+offset_top = -38.928
+offset_right = 126.0
+offset_bottom = 39.072
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="continuar" type="Label" parent="CenterContainer2"]
+layout_mode = 2
+text = "¿Continuar?"
+label_settings = SubResource("LabelSettings_t5wfw")
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.434
+anchor_top = 0.705
+anchor_right = 0.434
+anchor_bottom = 0.705
+offset_left = -28.968
+offset_top = -24.84
+offset_right = 28.032
+offset_bottom = 25.16
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="si" type="Button" parent="CenterContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_idf8g")
+theme_override_font_sizes/font_size = 42
+text = "SI"
+flat = true
+script = ExtResource("2_t5wfw")
+
+[node name="CenterContainer4" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.809
+anchor_right = 0.455
+anchor_bottom = 0.809
+offset_left = -55.16
+offset_top = -25.232
+offset_right = 54.84
+offset_bottom = 24.768
+
+[node name="no" type="Button" parent="CenterContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_idf8g")
+theme_override_font_sizes/font_size = 42
+text = "NO :("
+flat = true
+script = ExtResource("3_t5wfw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 441.0
+offset_right = 1774.0
+offset_bottom = 1521.0
+scale = Vector2(0.183289, 0.183289)
+texture = ExtResource("5_0vc6r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(793, 485)
+scale = Vector2(2.55625, 2.55625)
+sprite_frames = SubResource("SpriteFrames_c4ivs")
+frame = 9
+frame_progress = 1.0

@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://b2cdkriy4sv8w"]
+
+[ext_resource type="Script" uid="uid://dp6a250kv6y1c" path="res://levels_menu.gd" id="1_ye16d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xaf8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu8gj"]
+bg_color = Color(0.79403, 0.188412, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4b1c"]
+bg_color = Color(0.69011, 0.158619, 2.88785e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y55m"]
+bg_color = Color(0.786429, 0.183475, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0vmk"]
+bg_color = Color(0.357292, 0.718072, 0.999999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quckq"]
+bg_color = Color(1.78084e-06, 0.393526, 0.623361, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36buc"]
+bg_color = Color(0, 0.571434, 0.895937, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibhv6"]
+bg_color = Color(1, 0.571518, 0.251793, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6x7h"]
+bg_color = Color(0.787841, 0.396187, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0npi"]
+bg_color = Color(0.890318, 0.450029, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrhjb"]
+bg_color = Color(0.331279, 0.151091, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6jdy"]
+bg_color = Color(0.104538, 0.030726, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reqka"]
+bg_color = Color(0.182137, 0.0716885, 0, 1)
+
+[node name="Levels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ye16d")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="ChangeLvl1" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xaf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu8gj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c4b1c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6y55m")
+text = "CHINATOWN"
+
+[node name="ChangeLvl2" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xaf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a0vmk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quckq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_36buc")
+text = "SKY MAP"
+
+[node name="ChangeLvl3" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xaf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ibhv6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r6x7h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u0npi")
+text = "FIRE MAP"
+
+[node name="ChangeLvl4" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4xaf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vrhjb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6jdy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_reqka")
+text = "EARTH MAP"
+
+[connection signal="pressed" from="GridContainer/ChangeLvl1" to="." method="_on_change_lvl_1_pressed"]
+[connection signal="pressed" from="GridContainer/ChangeLvl2" to="." method="_on_change_lvl_2_pressed"]
+[connection signal="pressed" from="GridContainer/ChangeLvl3" to="." method="_on_change_lvl_3_pressed"]
+[connection signal="pressed" from="GridContainer/ChangeLvl4" to="." method="_on_change_lvl_4_pressed"]

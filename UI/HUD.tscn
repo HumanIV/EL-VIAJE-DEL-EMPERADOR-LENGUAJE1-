@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4j8lhuw27kv4"]
+
+[ext_resource type="Script" uid="uid://cmrwhrbtd10t8" path="res://UI/hud.gd" id="1_4n7mi"]
+[ext_resource type="Texture2D" uid="uid://bcygtm0ax8ubr" path="res://assets y escena player/Fire_Warrior/Fire_Warrior_Portrait.png" id="1_ijstf"]
+[ext_resource type="Texture2D" uid="uid://bhsjyfoegmi7v" path="res://UI/heart_life.png" id="2_4n7mi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uk570"]
+bg_color = Color(0.74902, 0.564706, 0.223529, 0.439216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 0
+follow_viewport_enabled = true
+script = ExtResource("1_4n7mi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 7.0
+offset_bottom = 8.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+scale = Vector2(6.75796, 2.42695)
+theme_override_styles/panel = SubResource("StyleBoxFlat_uk570")
+
+[node name="portrait" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 72.0
+offset_bottom = 76.0
+scale = Vector2(1.16851, 1.16851)
+texture = ExtResource("1_ijstf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 22.0
+offset_right = 3330.0
+offset_bottom = 1102.0
+scale = Vector2(0.0553458, 0.0553458)
+
+[node name="heart_1" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_4n7mi")
+
+[node name="heart_2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_4n7mi")
+
+[node name="heart_3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_4n7mi")

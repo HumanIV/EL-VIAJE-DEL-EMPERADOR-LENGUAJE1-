@@ -1,0 +1,6 @@
+res://UI/HUD.tscn
+res://tilemaps/tile_map.tres
+res://assets y escena player/player_mechanics.gd
+res://main_menu.tscn
+res://levels/mapa_chinatown.tscn
+res://UI/hud.gd
